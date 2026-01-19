@@ -1,9 +1,9 @@
+import { filterObject, mapObject, sum, type Pair } from './utils.ts'
+
 const ISRAEL_RULES = {
     totalSeats: 120,
     threshold: 0.0325 // 3.25%
 }
-
-type Pair<T> = [T, T]
 
 export interface Inputs {
     votes: {
@@ -159,26 +159,6 @@ function validateFinalSeats(finalSeats: Record<string, number>, totalSeats: numb
         throw new Error(`Final seats assigned (${assignedSeats}) does not equal total seats (${totalSeats})`)
     }
 }
-
-function sum(nums: number[]): number {
-    return nums.reduce((a, b) => a + b, 0)
-}
-
-function filterObject<K extends string | number | symbol, V>(
-    obj: Record<K, V>,
-    pred: (v: V, k: K) => boolean
-): Record<K, V> {
-    const pairs = Object.entries(obj) as [K, V][]
-    const filteredPairs = pairs.filter(([k, v]) => pred(v, k))
-    return Object.fromEntries(filteredPairs) as Record<K, V>
-}
-
-function mapObject<K extends string | number | symbol, A, B>(obj: Record<K, A>, fn: (v: A, k: K) => B): Record<K, B> {
-    const pairs = Object.entries(obj) as [K, A][]
-    const mappedPairs = pairs.map(([k, v]) => [k, fn(v, k)] as [K, B])
-    return Object.fromEntries(mappedPairs) as Record<K, B>
-}
-
 await (async function main() {
     console.log('running')
 })()
