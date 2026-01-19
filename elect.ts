@@ -30,7 +30,7 @@ interface Results {
     }
 }
 
-function runElection(inputs: Inputs): Results {
+export function runElection(inputs: Inputs): Results {
     const initialSeats = getInitialSeating(inputs)
     const seatsAlreadyAssigned = sum(Object.values(initialSeats))
     const seatsLeft = inputs.totalSeats - seatsAlreadyAssigned

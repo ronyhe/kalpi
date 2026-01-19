@@ -12,9 +12,11 @@
         "fmt": "oxfmt",
         "fmt:check": "oxfmt --check",
         "typecheck": "tsc --noEmit",
-        "verify": "npm run fmt:check && npm run typecheck"
+        "verify": "npm run fmt:check && npm run typecheck",
+        "cli": "tsx cli.ts"
     },
     "devDependencies": {
+        "@types/node": "^25.0.3",
         "oxfmt": "^0.22.0",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3"
