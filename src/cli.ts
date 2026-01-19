@@ -1,7 +1,7 @@
 import path from 'node:path'
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import { runElection, type Results, type Inputs } from './elect.js'
+import { runElection, type Results, type Inputs } from './elect.ts'
 
 await (async function main() {
     const firstArg = process.argv[2]

@@ -7,18 +7,16 @@
     "author": "ronyhe",
     "type": "module",
     "scripts": {
-        "run": "tsx src/elect.ts",
         "test": "node --test",
         "fmt": "oxfmt",
         "fmt:check": "oxfmt --check",
         "typecheck": "tsc --noEmit",
         "verify": "npm run typecheck && npm run fmt:check && npm test",
-        "cli": "tsx src/cli.ts"
+        "cli": "node src/cli.ts"
     },
     "devDependencies": {
         "@types/node": "^25.0.3",
         "oxfmt": "^0.22.0",
-        "tsx": "^4.21.0",
         "typescript": "^5.9.3"
     }
 }
