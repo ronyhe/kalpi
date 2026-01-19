@@ -1,0 +1,17 @@
+{
+  "name": "elect",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "run": "tsx elect.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
