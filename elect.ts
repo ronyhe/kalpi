@@ -5,7 +5,7 @@ const ISRAEL_RULES = {
 
 type Pair<T> = [T, T]
 
-interface Inputs {
+export interface Inputs {
     votes: {
         [party: string]: number
     }

@@ -49,5 +49,17 @@
         ["Yesh Kivun", "HaPiratim"]
     ],
     "totalSeats": 120,
-    "threshold": 0.0325
+    "threshold": 0.0325,
+    "expected": {
+        "HaLikud": 32,
+        "Yesh Atid": 24,
+        "HaTzionut HaDatit": 14,
+        "HaMahane HaMamlachti": 12,
+        "Shas'": 11,
+        "Yahadut HaTorah": 7,
+        "Yisrael Beytenu": 6,
+        "Ra'am": 5,
+        "Hadash-Ta'al": 5,
+        "HaAvoda'": 4
+    }
 }
