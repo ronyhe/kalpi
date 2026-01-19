@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import { runElection, type Results } from './elect.js'
+import { runElection, type Results, type Inputs } from './elect.js'
 
 await (async function main() {
     const firstArg = process.argv[2]
@@ -19,7 +19,7 @@ function stringifySeats(results: Results, totalSeats: number): string {
     return lines.join('\n')
 }
 
-async function getInputsFromFile(filePath: string): Promise<any> {
+async function getInputsFromFile(filePath: string): Promise<Inputs> {
     try {
         const fileContents = await fs.readFile(filePath, 'utf-8')
         return JSON.parse(fileContents)
