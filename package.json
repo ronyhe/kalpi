@@ -4,13 +4,16 @@
   "type": "module",
   "scripts": {
     "run": "tsx elect.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
   "description": "",
   "devDependencies": {
+    "oxfmt": "^0.2.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
