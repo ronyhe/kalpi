@@ -48,6 +48,8 @@ export function runElection(inputs: Inputs): Results {
         }
     }
 
+    validateFinalSeats(finalSeats, inputs.totalSeats)
+
     return {
         seats: finalSeats
     }
@@ -149,6 +151,13 @@ function getInitialSeating(options: Inputs): Record<string, number> {
 
     // Round? Up? Down?
     return mapObject(eligibleVotes, v => Math.floor(v / pricePerSeat))
+}
+
+function validateFinalSeats(finalSeats: Record<string, number>, totalSeats: number) {
+    const assignedSeats = sum(Object.values(finalSeats))
+    if (assignedSeats !== totalSeats) {
+        throw new Error(`Final seats assigned (${assignedSeats}) does not equal total seats (${totalSeats})`)
+    }
 }
 
 function sum(nums: number[]): number {
