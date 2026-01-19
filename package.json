@@ -4,7 +4,7 @@
     "description": "",
     "keywords": [],
     "license": "UNLICENSED",
-    "author": "",
+    "author": "ronyhe",
     "type": "module",
     "scripts": {
         "run": "tsx elect.ts",
