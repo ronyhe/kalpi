@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { runElection, type Inputs } from './elect.js'
+import { runElection, type Inputs } from '../src/elect.js'
 import data24 from './knesset24.json' with { type: 'json' }
 import data25 from './knesset25.json' with { type: 'json' }
 

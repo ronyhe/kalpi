@@ -1,10 +1,16 @@
+import path from 'node:path'
 import fs from 'node:fs/promises'
 import process from 'node:process'
 import { runElection, type Results, type Inputs } from './elect.js'
 
 await (async function main() {
     const firstArg = process.argv[2]
-    const inputs = await getInputsFromFile(firstArg!)
+    if (!firstArg) {
+        console.error('Usage: elect <path-to-input-json-file>\nSee test/knesset24.json for an example input file')
+        process.exit(1)
+    }
+    const pathToFile = path.resolve(process.cwd(), firstArg!)
+    const inputs = await getInputsFromFile(pathToFile)
     const results = runElection(inputs)
     console.log(stringifySeats(results, inputs.totalSeats))
 })()
