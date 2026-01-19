@@ -24,7 +24,7 @@ interface Group {
     extraSeats: number
 }
 
-interface Results {
+export interface Results {
     seats: {
         [party: string]: number
     }

@@ -1,14 +1,23 @@
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import { runElection } from './elect.js'
+import { runElection, type Results } from './elect.js'
 
 await (async function main() {
     const firstArg = process.argv[2]
     const inputs = await getInputsFromFile(firstArg!)
     const results = runElection(inputs)
-    const sorted = Object.entries(results.seats).sort((a, b) => b[1] - a[1])
-    console.table(sorted)
+    console.log(stringifySeats(results, inputs.totalSeats))
 })()
+
+function stringifySeats(results: Results, totalSeats: number): string {
+    const longestKey = Object.keys(results.seats).reduce((a, b) => (a.length > b.length ? a : b), '')
+    const paddingForKey = longestKey.length
+    const paddingForValue = totalSeats.toString().length + 1
+    const lines = Object.entries(results.seats)
+        .sort(([, a], [, b]) => b - a)
+        .map(([key, value]) => key.padEnd(paddingForKey, ' ') + value.toString().padStart(paddingForValue, ' '))
+    return lines.join('\n')
+}
 
 async function getInputsFromFile(filePath: string): Promise<any> {
     try {
