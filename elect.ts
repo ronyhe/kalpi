@@ -139,18 +139,6 @@ function getInitialSeating(options: Inputs): Record<string, number> {
     return mapObject(eligibleVotes, v => Math.floor(v / pricePerSeat))
 }
 
-function unifyPacts(votes: { [party: string]: number }, pacts: Pair<string>[]): { [party: string]: number } {
-    const unifiedVotes: { [party: string]: number } = { ...votes }
-    for (const [partyA, partyB] of pacts) {
-        const votesA = unifiedVotes[partyA]!
-        const votesB = unifiedVotes[partyB]!
-        unifiedVotes[`${partyA}$$${partyB}`] = votesA + votesB
-        delete unifiedVotes[partyA]
-        delete unifiedVotes[partyB]
-    }
-    return unifiedVotes
-}
-
 function sum(nums: number[]): number {
     return nums.reduce((a, b) => a + b, 0)
 }
