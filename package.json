@@ -1,20 +1,22 @@
 {
-  "name": "elect",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "run": "tsx elect.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "UNLICENSED",
-  "description": "",
-  "devDependencies": {
-    "oxfmt": "^0.2.0",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
-  }
+    "name": "elect",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "license": "UNLICENSED",
+    "author": "",
+    "type": "module",
+    "scripts": {
+        "run": "tsx elect.ts",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "fmt": "oxfmt",
+        "fmt:check": "oxfmt --check",
+        "typecheck": "tsc --noEmit",
+        "verify": "npm run fmt:check && npm run typecheck"
+    },
+    "devDependencies": {
+        "oxfmt": "^0.22.0",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
 }
