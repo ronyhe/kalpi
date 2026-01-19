@@ -72,19 +72,31 @@ function createGroups(inputs: Inputs, initialSeats: Record<string, number>): Gro
     }
 
     for (const [partyA, partyB] of inputs.remainderPacts) {
-        groups.push({
-            members: {
-                [partyA]: {
+        const members = []
+        if (partyA in initialSeats) {
+            members.push([
+                partyA,
+                {
                     votes: inputs.votes[partyA]!,
                     seats: initialSeats[partyA]!
-                },
-                [partyB]: {
+                }
+            ])
+        }
+        if (partyB in initialSeats) {
+            members.push([
+                partyB,
+                {
                     votes: inputs.votes[partyB]!,
                     seats: initialSeats[partyB]!
                 }
-            },
-            extraSeats: 0
-        })
+            ])
+        }
+        if (members.length > 0) {
+            groups.push({
+                members: Object.fromEntries(members),
+                extraSeats: 0
+            })
+        }
     }
 
     return groups
