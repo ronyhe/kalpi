@@ -20,4 +20,8 @@ export function mapObject<K extends string | number | symbol, A, B>(
     return Object.fromEntries(mappedPairs) as Record<K, B>
 }
 
+export function sumValues(obj: Record<string, number>): number {
+    return sum(Object.values(obj))
+}
+
 export type Pair<T> = [T, T]

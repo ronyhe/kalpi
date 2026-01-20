@@ -1,4 +1,4 @@
-import { filterObject, mapObject, sum, type Pair } from './utils.ts'
+import { filterObject, mapObject, sum, sumValues, type Pair } from './utils.ts'
 import { distributeSeats } from './remainder-seats.ts'
 
 const ISRAEL_RULES = {
@@ -33,7 +33,7 @@ export interface Results {
 
 export function runElection(inputs: Inputs): Results {
     const initialSeats = getInitialSeating(inputs)
-    const seatsAlreadyAssigned = sum(Object.values(initialSeats))
+    const seatsAlreadyAssigned = sumValues(initialSeats)
     const seatsLeft = inputs.totalSeats - seatsAlreadyAssigned
 
     const groups = createGroups(inputs, initialSeats)
@@ -130,11 +130,11 @@ function giveRemainingSeats(groups: Group[], remainingSeats: number) {
 
 function getInitialSeating(options: Inputs): Record<string, number> {
     const { votes, threshold, totalSeats } = options
-    const totalVotes = sum(Object.values(votes))
+    const totalVotes = sumValues(votes)
     const effectiveThreshold = Math.floor(totalVotes * threshold)
 
     const eligibleVotes = filterObject(votes, v => v >= effectiveThreshold)
-    const eligibleTotalVotes = sum(Object.values(eligibleVotes))
+    const eligibleTotalVotes = sumValues(eligibleVotes)
 
     const pricePerSeat = Math.floor(eligibleTotalVotes / totalSeats) // HaModed
 
@@ -142,7 +142,7 @@ function getInitialSeating(options: Inputs): Record<string, number> {
 }
 
 function validateFinalSeats(finalSeats: Record<string, number>, totalSeats: number) {
-    const assignedSeats = sum(Object.values(finalSeats))
+    const assignedSeats = sumValues(finalSeats)
     if (assignedSeats !== totalSeats) {
         throw new Error(`Final seats assigned (${assignedSeats}) does not equal total seats (${totalSeats})`)
     }
