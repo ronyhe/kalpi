@@ -1,4 +1,5 @@
 import { filterObject, mapObject, sum, type Pair } from './utils.ts'
+import { distributeSeats } from './remainder-seats.ts'
 
 const ISRAEL_RULES = {
     totalSeats: 120,
@@ -105,37 +106,25 @@ function createGroups(inputs: Inputs, initialSeats: Record<string, number>): Gro
 }
 
 function giveRemainingSeatsInsideGroup(group: Group) {
-    for (let i = 0; i < group.extraSeats; i++) {
-        const memberThatWouldGiveHighestPriceForNextSeat = Object.entries(group.members).reduce(
-            (bestMemberEntry, currentMemberEntry) => {
-                const [currentMemberName, currentMember] = currentMemberEntry
-                const currentPriceForNextSeat = currentMember.votes / (currentMember.seats + 1) // Round? Up? Down?
-
-                const [bestMemberName, bestMember] = bestMemberEntry
-                const bestPriceForNextSeat = bestMember.votes / (bestMember.seats + 1) // Round? Up? Down?
-
-                return currentPriceForNextSeat > bestPriceForNextSeat ? currentMemberEntry : bestMemberEntry
-            }
-        )
-        memberThatWouldGiveHighestPriceForNextSeat[1].seats += 1
+    const distribution = distributeSeats(group.members, group.extraSeats)
+    for (const [memberName, seatsToAdd] of Object.entries(distribution)) {
+        group.members[memberName]!.seats += seatsToAdd
     }
 }
 
 function giveRemainingSeats(groups: Group[], remainingSeats: number) {
-    for (let i = 0; i < remainingSeats; i++) {
-        const groupThatWouldGiveHighestPriceForNextSeat = groups.reduce((bestGroup, currentGroup) => {
-            const currentGroupVotes = sum(Object.values(currentGroup.members).map(m => m.votes))
-            const currentGroupSeats =
-                sum(Object.values(currentGroup.members).map(m => m.seats)) + currentGroup.extraSeats
-            const currentPriceForNextSeat = currentGroupVotes / (currentGroupSeats + 1) // Round? Up? Down?
-
-            const bestGroupVotes = sum(Object.values(bestGroup.members).map(m => m.votes))
-            const bestGroupSeats = sum(Object.values(bestGroup.members).map(m => m.seats)) + bestGroup.extraSeats
-            const bestPriceForNextSeat = bestGroupVotes / (bestGroupSeats + 1) // Round? Up? Down?
-
-            return currentPriceForNextSeat > bestPriceForNextSeat ? currentGroup : bestGroup
-        })
-        groupThatWouldGiveHighestPriceForNextSeat.extraSeats += 1
+    const distributionParticipants = Object.fromEntries(
+        groups.map((group, i) => [
+            i.toString(),
+            {
+                votes: sum(Object.values(group.members).map(m => m.votes)),
+                seats: sum(Object.values(group.members).map(m => m.seats))
+            }
+        ])
+    )
+    const distribution = distributeSeats(distributionParticipants, remainingSeats)
+    for (const [groupIndex, seatsToAdd] of Object.entries(distribution)) {
+        groups[parseInt(groupIndex)]!.extraSeats += seatsToAdd
     }
 }
 
@@ -159,6 +148,3 @@ function validateFinalSeats(finalSeats: Record<string, number>, totalSeats: numb
         throw new Error(`Final seats assigned (${assignedSeats}) does not equal total seats (${totalSeats})`)
     }
 }
-await (async function main() {
-    console.log('running')
-})()
