@@ -12,7 +12,7 @@ export interface Inputs {
     }
     threshold: number // Achuz HaChasima
     remainderPacts: Pair<string>[] // Heskemei Odafim
-    totalSeats: number // 120 seats in Knesset
+    totalSeats: number
 }
 
 interface Group {
@@ -131,14 +131,13 @@ function giveRemainingSeats(groups: Group[], remainingSeats: number) {
 function getInitialSeating(options: Inputs): Record<string, number> {
     const { votes, threshold, totalSeats } = options
     const totalVotes = sum(Object.values(votes))
-    const effectiveThreshold = Math.floor(totalVotes * threshold) // Round? Up? Down?
+    const effectiveThreshold = Math.floor(totalVotes * threshold)
 
     const eligibleVotes = filterObject(votes, v => v >= effectiveThreshold)
     const eligibleTotalVotes = sum(Object.values(eligibleVotes))
 
-    const pricePerSeat = Math.floor(eligibleTotalVotes / totalSeats) // Round? Up? Down? // HaModed
+    const pricePerSeat = Math.floor(eligibleTotalVotes / totalSeats) // HaModed
 
-    // Round? Up? Down?
     return mapObject(eligibleVotes, v => Math.floor(v / pricePerSeat))
 }
 
