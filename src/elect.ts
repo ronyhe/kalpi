@@ -1,5 +1,5 @@
 import { filterObject, mapObject, sum, sumValues, type Pair } from './utils.ts'
-import { distributeSeats } from './remainder-seats.ts'
+import { distributeSeats, type Participant } from './remainder-seats.ts'
 
 const ISRAEL_RULES = {
     totalSeats: 120,
@@ -79,6 +79,13 @@ function createGroups(inputs: Inputs, initialSeats: Record<string, number>): Gro
     }))
 }
 
+function groupToParticipant(group: Group): Participant {
+    return {
+        votes: sum(Object.values(group.members).map(m => m.votes)),
+        seats: sum(Object.values(group.members).map(m => m.seats))
+    }
+}
+
 function giveRemainingSeatsInsideGroup(group: Group) {
     const distribution = distributeSeats(group.members, group.extraSeats)
     for (const [memberName, seatsToAdd] of Object.entries(distribution)) {
@@ -87,14 +94,8 @@ function giveRemainingSeatsInsideGroup(group: Group) {
 }
 
 function giveRemainingSeats(groups: Group[], remainingSeats: number) {
-    const distributionParticipants = Object.fromEntries(
-        groups.map((group, i) => [
-            i.toString(),
-            {
-                votes: sum(Object.values(group.members).map(m => m.votes)),
-                seats: sum(Object.values(group.members).map(m => m.seats))
-            }
-        ])
+    const distributionParticipants: Record<string, Participant> = Object.fromEntries(
+        groups.map(groupToParticipant).map((gp, index) => [index.toString(), gp])
     )
     const distribution = distributeSeats(distributionParticipants, remainingSeats)
     for (const [groupIndex, seatsToAdd] of Object.entries(distribution)) {
