@@ -57,52 +57,26 @@ export function runElection(inputs: Inputs): Results {
 }
 
 function createGroups(inputs: Inputs, initialSeats: Record<string, number>): Group[] {
-    const groups: Group[] = []
-
-    for (const [party, seats] of Object.entries(initialSeats)) {
-        const hasBuddy = inputs.remainderPacts.some(([partyA, partyB]) => partyA === party || partyB === party)
-        if (!hasBuddy) {
-            groups.push({
-                members: {
-                    [party]: {
+    const remainderPactMembers = new Set<string>(inputs.remainderPacts.flat())
+    const isMember = (party: string) => remainderPactMembers.has(party)
+    const grouped = Object.keys(inputs.votes)
+        .filter(party => !isMember(party))
+        .map(party => [party])
+        .concat(inputs.remainderPacts)
+    return grouped.map(members => ({
+        extraSeats: 0,
+        members: Object.fromEntries(
+            members
+                .filter(party => party in initialSeats)
+                .map(party => [
+                    party,
+                    {
                         votes: inputs.votes[party]!,
-                        seats: seats
+                        seats: initialSeats[party]!
                     }
-                },
-                extraSeats: 0
-            })
-        }
-    }
-
-    for (const [partyA, partyB] of inputs.remainderPacts) {
-        const members = []
-        if (partyA in initialSeats) {
-            members.push([
-                partyA,
-                {
-                    votes: inputs.votes[partyA]!,
-                    seats: initialSeats[partyA]!
-                }
-            ])
-        }
-        if (partyB in initialSeats) {
-            members.push([
-                partyB,
-                {
-                    votes: inputs.votes[partyB]!,
-                    seats: initialSeats[partyB]!
-                }
-            ])
-        }
-        if (members.length > 0) {
-            groups.push({
-                members: Object.fromEntries(members),
-                extraSeats: 0
-            })
-        }
-    }
-
-    return groups
+                ])
+        )
+    }))
 }
 
 function giveRemainingSeatsInsideGroup(group: Group) {
