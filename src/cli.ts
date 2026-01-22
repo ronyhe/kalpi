@@ -1,6 +1,7 @@
-import path from 'node:path'
 import fs from 'node:fs/promises'
+import path from 'node:path'
 import process from 'node:process'
+
 import { runElection, type Results, type SerializedElection, deserializeElection } from './elect.ts'
 
 await (async function main() {

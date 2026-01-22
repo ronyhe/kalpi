@@ -9,5 +9,6 @@
     "trailingComma": "none",
     "semi": false,
     "arrowParens": "avoid",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "experimentalSortImports": {}
 }
