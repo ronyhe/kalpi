@@ -1,7 +1,7 @@
 import path from 'node:path'
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import { runElection, type Results, type Inputs } from './elect.ts'
+import { runElection, type Results, type SerializedElection, deserializeElection } from './elect.ts'
 
 await (async function main() {
     const firstArg = process.argv[2]
@@ -9,10 +9,11 @@ await (async function main() {
         console.error('Usage: elect <path-to-input-json-file>\nSee test/knesset24.json for an example input file')
         process.exit(1)
     }
-    const pathToFile = path.resolve(process.cwd(), firstArg!)
+    const pathToFile = path.resolve(process.cwd(), firstArg)
     const inputs = await getInputsFromFile(pathToFile)
-    const results = runElection(inputs)
-    console.log(stringifySeats(results, inputs.totalSeats))
+    const election = deserializeElection(inputs)
+    const results = runElection(election)
+    console.log(stringifySeats(results, inputs.seats))
 })()
 
 function stringifySeats(results: Results, totalSeats: number): string {
@@ -25,7 +26,7 @@ function stringifySeats(results: Results, totalSeats: number): string {
     return lines.join('\n')
 }
 
-async function getInputsFromFile(filePath: string): Promise<Inputs> {
+async function getInputsFromFile(filePath: string): Promise<SerializedElection> {
     try {
         const fileContents = await fs.readFile(filePath, 'utf-8')
         return JSON.parse(fileContents)

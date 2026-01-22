@@ -1,28 +1,22 @@
-import { filterObject, mapObject, sum, sumValues, type Pair } from './utils.ts'
-import { distributeSeats, type Participant } from './remainder-seats.ts'
+import { maxBy, sum, range } from './utils.ts'
 
-const ISRAEL_RULES = {
-    totalSeats: 120,
-    threshold: 0.0325 // 3.25%
+interface Party {
+    name: string
+    votes: number
 }
 
-export interface Inputs {
-    votes: {
-        [party: string]: number
-    }
-    threshold: number // Achuz HaChasima
-    remainderPacts: Pair<string>[] // Heskemei Odafim
-    totalSeats: number
+type Alliance = Party[]
+
+interface Election {
+    contenders: Contender[]
+    seats: number
+    threshold: number
 }
 
-interface Group {
-    members: {
-        [party: string]: {
-            votes: number
-            seats: number
-        }
-    }
-    extraSeats: number
+export interface SerializedElection {
+    votes: (Party | Alliance)[]
+    seats: number
+    threshold: number
 }
 
 export interface Results {
@@ -31,94 +25,129 @@ export interface Results {
     }
 }
 
-export function runElection(inputs: Inputs): Results {
-    const initialSeats = getInitialSeating(inputs)
-    const seatsAlreadyAssigned = sumValues(initialSeats)
-    const seatsLeft = inputs.totalSeats - seatsAlreadyAssigned
-
-    const groups = createGroups(inputs, initialSeats)
-    giveRemainingSeats(groups, seatsLeft)
-    for (const group of groups) {
-        giveRemainingSeatsInsideGroup(group)
-    }
-
-    const finalSeats: Record<string, number> = {}
-    for (const group of groups) {
-        for (const [memberName, member] of Object.entries(group.members)) {
-            finalSeats[memberName] = member.seats
+export function deserializeElection({ votes, threshold, seats }: SerializedElection): Election {
+    const contenders = votes.map(v => {
+        if (isParty(v)) {
+            return new Contender([v])
+        } else {
+            return new Contender(v)
         }
-    }
-
-    validateFinalSeats(finalSeats, inputs.totalSeats)
-
+    })
     return {
-        seats: finalSeats
+        contenders,
+        seats,
+        threshold
     }
 }
 
-function createGroups(inputs: Inputs, initialSeats: Record<string, number>): Group[] {
-    const remainderPactMembers = new Set<string>(inputs.remainderPacts.flat())
-    const isMember = (party: string) => remainderPactMembers.has(party)
-    const grouped = Object.keys(inputs.votes)
-        .filter(party => !isMember(party))
-        .map(party => [party])
-        .concat(inputs.remainderPacts)
-    return grouped.map(members => ({
-        extraSeats: 0,
-        members: Object.fromEntries(
-            members
-                .filter(party => party in initialSeats)
-                .map(party => [
-                    party,
-                    {
-                        votes: inputs.votes[party]!,
-                        seats: initialSeats[party]!
-                    }
-                ])
+function isParty(v: Party | Alliance): v is Party {
+    return (v as Party).name !== undefined
+}
+
+class Contender {
+    public readonly parties: Party[]
+
+    constructor(parties: Party[]) {
+        this.parties = parties
+    }
+
+    votes(): number {
+        return sum(this.parties.map(p => p.votes))
+    }
+
+    filterPartiesByEffectiveThreshold(threshold: number): Contender | null {
+        const passedParties = this.parties.filter(p => p.votes >= threshold)
+        if (passedParties.length === 0) {
+            return null
+        }
+        return new Contender(passedParties)
+    }
+
+    toEligibleContender(quota: number): EligibleContender {
+        const eligibleParties = this.parties.map(p => new EligibleParty(p.name, p.votes, Math.floor(p.votes / quota)))
+        return new EligibleContender(eligibleParties)
+    }
+}
+
+class EligibleParty {
+    public readonly name: string
+    public readonly votes: number
+    public readonly seats: number
+
+    constructor(name: string, votes: number, seats: number) {
+        this.name = name
+        this.votes = votes
+        this.seats = seats
+    }
+
+    priceForNextSeat(): number {
+        return Math.floor(this.votes / (this.seats + 1))
+    }
+}
+
+class EligibleContender {
+    public readonly parties: EligibleParty[]
+
+    constructor(parties: EligibleParty[]) {
+        this.parties = parties
+    }
+
+    votes(): number {
+        return sum(this.parties.map(p => p.votes))
+    }
+
+    seats(): number {
+        return sum(this.parties.map(p => p.seats))
+    }
+
+    priceForNextSeat() {
+        return Math.floor(this.votes() / (this.seats() + 1))
+    }
+
+    giveSeatToBestParty(): EligibleContender {
+        const bestParty = maxBy(this.parties, p => p.priceForNextSeat())!
+        return new EligibleContender(
+            this.parties.map(p => {
+                if (Object.is(bestParty, p)) {
+                    return new EligibleParty(p.name, p.votes, p.seats + 1)
+                } else {
+                    return p
+                }
+            })
         )
-    }))
-}
-
-function groupToParticipant(group: Group): Participant {
-    return {
-        votes: sum(Object.values(group.members).map(m => m.votes)),
-        seats: sum(Object.values(group.members).map(m => m.seats))
     }
 }
 
-function giveRemainingSeatsInsideGroup(group: Group) {
-    const distribution = distributeSeats(group.members, group.extraSeats)
-    for (const [memberName, seatsToAdd] of Object.entries(distribution)) {
-        group.members[memberName]!.seats += seatsToAdd
-    }
-}
-
-function giveRemainingSeats(groups: Group[], remainingSeats: number) {
-    const distributionParticipants: Record<string, Participant> = Object.fromEntries(
-        groups.map(groupToParticipant).map((gp, index) => [index.toString(), gp])
-    )
-    const distribution = distributeSeats(distributionParticipants, remainingSeats)
-    for (const [groupIndex, seatsToAdd] of Object.entries(distribution)) {
-        groups[parseInt(groupIndex)]!.extraSeats += seatsToAdd
-    }
-}
-
-function getInitialSeating(options: Inputs): Record<string, number> {
-    const { votes, threshold, totalSeats } = options
-    const totalVotes = sumValues(votes)
+export function runElection({ contenders, threshold, seats }: Election): Results {
+    const totalVotes = sum(contenders.map(c => c.votes()))
     const effectiveThreshold = Math.floor(totalVotes * threshold)
-
-    const eligibleVotes = filterObject(votes, v => v >= effectiveThreshold)
-    const eligibleTotalVotes = sumValues(eligibleVotes)
-
-    const pricePerSeat = Math.floor(eligibleTotalVotes / totalSeats) // HaModed
-
-    return mapObject(eligibleVotes, v => Math.floor(v / pricePerSeat))
+    const filteredContenders = contenders
+        .map(contender => contender.filterPartiesByEffectiveThreshold(effectiveThreshold))
+        .filter(c => c !== null)
+    const eligibleVotes = sum(filteredContenders.map(c => c.votes()))
+    const quota = Math.floor(eligibleVotes / seats)
+    const eligibleContenders = filteredContenders.map(c => c.toEligibleContender(quota))
+    const remainingSeats = seats - sum(eligibleContenders.map(c => c.seats()))
+    const fullSeating = range(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
+    const results = {
+        seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats])))
+    }
+    const totalAssignedSeats = sum(Object.values(results.seats))
+    if (totalAssignedSeats !== seats) {
+        throw new Error(
+            `Internal error: total assigned seats ${totalAssignedSeats} does not equal total seats ${seats}`
+        )
+    }
+    return results
 }
 
-function validateFinalSeats(finalSeats: Record<string, number>, totalSeats: number) {
-    const assignedSeats = sumValues(finalSeats)
-    if (assignedSeats !== totalSeats) {
-        throw new Error(`Final seats assigned (${assignedSeats}) does not equal total seats (${totalSeats})`)
-    }
+function giveNextSeat(contenders: EligibleContender[]): EligibleContender[] {
+    const bestContender = maxBy(contenders, c => c.priceForNextSeat())!
+    return contenders.map(c => {
+        if (Object.is(c, bestContender)) {
+            return c.giveSeatToBestParty()
+        } else {
+            return c
+        }
+    })
 }

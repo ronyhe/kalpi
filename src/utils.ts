@@ -2,6 +2,23 @@ export function sum(nums: number[]): number {
     return nums.reduce((a, b) => a + b, 0)
 }
 
+export function maxBy<T>(arr: T[], fn: (item: T) => number): T | undefined {
+    let maxItem: T | undefined = undefined
+    let maxValue = -Infinity
+    for (const item of arr) {
+        const value = fn(item)
+        if (value > maxValue) {
+            maxValue = value
+            maxItem = item
+        }
+    }
+    return maxItem
+}
+
+export function range(n: number): number[] {
+    return [...new Array(n)].map((_, i) => i)
+}
+
 export function filterObject<K extends string | number | symbol, V>(
     obj: Record<K, V>,
     pred: (v: V, k: K) => boolean

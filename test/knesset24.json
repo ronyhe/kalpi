@@ -1,44 +1,56 @@
 {
-    "votes": {
-        "HaLikud": 1066892,
-        "Yesh Atid": 614112,
-        "Shas": 316008,
-        "Kachol Lavan": 292257,
-        "Yamina": 273836,
-        "HaAvoda": 268767,
-        "Yahadut HaTorah": 248391,
-        "Yisrael Beytenu": 248370,
-        "HaTzionut HaDatit": 225641,
-        "HaReshima HaMeshutefet": 212583,
-        "Tikva Hadasha": 209161,
-        "Meretz": 202218,
-        "Ra'am": 167064,
-        "HaKalkalit HaHadasha": 34883,
-        "Rapeh": 17346,
-        "HaPiratim": 1309,
-        "Ani VeAta": 1291,
-        "HaTikva LeShinui": 1189,
-        "HaMapatz HaHevrati - Gimlaim": 811,
-        "Mishpat Tzedek": 729,
-        "Tzomet": 663,
-        "Am Shalem": 592,
-        "Seder Hadash": 514,
-        "Kama": 486,
-        "HaBilti Efshari Efshari": 463,
-        "HaLev HaYehudi": 443,
-        "Atzmenu": 441,
-        "HaGush HaTanachi": 429,
-        "Olam Hadash": 429,
-        "Brit HaShutfut": 408,
-        "HaYisraelim": 395,
-        "Shma": 395,
-        "Da'am": 385,
-        "Manhigut Hevratit": 256,
-        "Ma'an": 253,
-        "Hetz": 226,
-        "Anachnu": 220,
-        "Kvod HaAdam": 196
-    },
+    "votes": [
+        [
+            { "name": "HaLikud", "votes": 1066892 },
+            { "name": "HaTzionut HaDatit", "votes": 225641 }
+        ],
+        [
+            { "name": "Yesh Atid", "votes": 614112 },
+            { "name": "Yisrael Beytenu", "votes": 248370 }
+        ],
+        [
+            { "name": "Shas", "votes": 316008 },
+            { "name": "Yahadut HaTorah", "votes": 248391 }
+        ],
+        [
+            { "name": "Kachol Lavan", "votes": 292257 },
+            { "name": "HaKalkalit HaHadasha", "votes": 34883 }
+        ],
+        [
+            { "name": "Yamina", "votes": 273836 },
+            { "name": "Tikva Hadasha", "votes": 209161 }
+        ],
+        [
+            { "name": "HaAvoda", "votes": 268767 },
+            { "name": "Meretz", "votes": 202218 }
+        ],
+        { "name": "HaReshima HaMeshutefet", "votes": 212583 },
+        { "name": "Ra'am", "votes": 167064 },
+        { "name": "Rapeh", "votes": 17346 },
+        { "name": "HaPiratim", "votes": 1309 },
+        { "name": "Ani VeAta", "votes": 1291 },
+        { "name": "HaTikva LeShinui", "votes": 1189 },
+        { "name": "HaMapatz HaHevrati - Gimlaim", "votes": 811 },
+        { "name": "Mishpat Tzedek", "votes": 729 },
+        { "name": "Tzomet", "votes": 663 },
+        { "name": "Am Shalem", "votes": 592 },
+        { "name": "Seder Hadash", "votes": 514 },
+        { "name": "Kama", "votes": 486 },
+        { "name": "HaBilti Efshari Efshari", "votes": 463 },
+        { "name": "HaLev HaYehudi", "votes": 443 },
+        { "name": "Atzmenu", "votes": 441 },
+        { "name": "HaGush HaTanachi", "votes": 429 },
+        { "name": "Olam Hadash", "votes": 429 },
+        { "name": "Brit HaShutfut", "votes": 408 },
+        { "name": "HaYisraelim", "votes": 395 },
+        { "name": "Shma", "votes": 395 },
+        { "name": "Da'am", "votes": 385 },
+        { "name": "Manhigut Hevratit", "votes": 256 },
+        { "name": "Ma'an", "votes": 253 },
+        { "name": "Hetz", "votes": 226 },
+        { "name": "Anachnu", "votes": 220 },
+        { "name": "Kvod HaAdam", "votes": 196 }
+    ],
     "expected": {
         "HaLikud": 30,
         "Yesh Atid": 17,
@@ -54,14 +66,6 @@
         "Meretz": 6,
         "Ra'am": 4
     },
-    "remainderPacts": [
-        ["Yamina", "Tikva Hadasha"],
-        ["Yesh Atid", "Yisrael Beytenu"],
-        ["Kachol Lavan", "HaKalkalit HaHadasha"],
-        ["HaLikud", "HaTzionut HaDatit"],
-        ["HaAvoda", "Meretz"],
-        ["Shas", "Yahadut HaTorah"]
-    ],
-    "totalSeats": 120,
+    "seats": 120,
     "threshold": 0.0325
 }
