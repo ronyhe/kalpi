@@ -69,6 +69,10 @@ Surplus agreements can only benefit parties - they cannot cause a party to lose 
 
 A party that reaches 60 seats (half the Knesset) without receiving 50% of the valid votes cannot receive additional remainder seats. This rule has never been triggered in practice.
 
+> [!NOTE]
+> This rule is currently not implemented in the code. Due to an open question: How does it interact with surplus agreements?
+> Since it was never triggered in practice, we can safely ignore it for now.
+
 ## Sources
 
 - [חוק בדר-עופר - ויקיפדיה](https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%91%D7%93%D7%A8-%D7%A2%D7%95%D7%A4%D7%A8)
