@@ -19,6 +19,6 @@ export function maxBy<T>(arr: T[], fn: (item: T) => number): T | undefined {
     return maxItem
 }
 
-export function range(n: number): number[] {
-    return [...new Array(n)].map((_, i) => i)
+export function iterations(n: number): undefined[] {
+    return Array.from({ length: n })
 }

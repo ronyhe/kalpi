@@ -1,4 +1,4 @@
-import { maxBy, sum, range, sumBy } from './utils.ts'
+import { maxBy, sum, iterations, sumBy } from './utils.ts'
 
 export interface SerializedElection {
     votes: (Party | Alliance)[]
@@ -140,7 +140,7 @@ export function runElection(election: Election): Results {
 }
 
 function giveRemainderSeats(eligibleContenders: EligibleContender[], remainingSeats: number): EligibleContender[] {
-    return range(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
+    return iterations(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
 }
 
 function giveInitialSeats({ contenders, threshold, seats }: Election): EligibleContender[] {

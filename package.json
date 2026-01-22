@@ -10,14 +10,18 @@
         "test": "node --test",
         "fmt": "oxfmt",
         "fmt:check": "oxfmt --check",
+        "oxlint": "oxlint -D=correctness -D=suspicious",
+        "lint": "npm run oxlint",
+        "lint:fix": "npm run oxlint -- --fix",
         "typecheck": "tsc --noEmit",
-        "verify": "npm run typecheck && npm run fmt:check && npm test",
+        "verify": "npm run fmt:check && npm run lint && npm run typecheck  && npm test",
         "cli": "node src/cli.ts",
         "cli2": "node src/cli2.ts"
     },
     "devDependencies": {
         "@types/node": "^25.0.3",
         "oxfmt": "^0.22.0",
+        "oxlint": "^1.38.0",
         "typescript": "^5.9.3"
     }
 }

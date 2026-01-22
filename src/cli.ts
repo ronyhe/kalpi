@@ -21,7 +21,7 @@ function stringifySeats(results: Results, totalSeats: number): string {
     const paddingForKey = longestKey.length
     const paddingForValue = totalSeats.toString().length + 1
     const lines = Object.entries(results.seats)
-        .sort(([, a], [, b]) => b - a)
+        .toSorted(([, a], [, b]) => b - a)
         .map(([key, value]) => key.padEnd(paddingForKey, ' ') + value.toString().padStart(paddingForValue, ' '))
     return lines.join('\n')
 }
