@@ -1,20 +1,20 @@
-import { maxBy, sum, range } from './utils.ts'
+import { maxBy, sum, range, sumBy } from './utils.ts'
 
-interface Party {
-    name: string
-    votes: number
-}
-
-type Alliance = Party[]
-
-interface Election {
-    contenders: Contender[]
+export interface SerializedElection {
+    votes: (Party | Alliance)[]
     seats: number
     threshold: number
 }
 
-export interface SerializedElection {
-    votes: (Party | Alliance)[]
+export interface Party {
+    name: string
+    votes: number
+}
+
+export type Alliance = Party[]
+
+export interface Election {
+    contenders: Contender[]
     seats: number
     threshold: number
 }
@@ -52,7 +52,7 @@ class Contender {
     }
 
     votes(): number {
-        return sum(this.parties.map(p => p.votes))
+        return sumBy(this.parties, p => p.votes)
     }
 
     filterPartiesByEffectiveThreshold(threshold: number): Contender | null {
@@ -93,11 +93,11 @@ class EligibleContender {
     }
 
     votes(): number {
-        return sum(this.parties.map(p => p.votes))
+        return sumBy(this.parties, p => p.votes)
     }
 
     seats(): number {
-        return sum(this.parties.map(p => p.seats))
+        return sumBy(this.parties, p => p.seats)
     }
 
     priceForNextSeat() {
@@ -118,17 +118,14 @@ class EligibleContender {
     }
 }
 
-export function runElection({ contenders, threshold, seats }: Election): Results {
-    const totalVotes = sum(contenders.map(c => c.votes()))
-    const effectiveThreshold = Math.floor(totalVotes * threshold)
-    const filteredContenders = contenders
-        .map(contender => contender.filterPartiesByEffectiveThreshold(effectiveThreshold))
-        .filter(c => c !== null)
-    const eligibleVotes = sum(filteredContenders.map(c => c.votes()))
-    const quota = Math.floor(eligibleVotes / seats)
-    const eligibleContenders = filteredContenders.map(c => c.toEligibleContender(quota))
-    const remainingSeats = seats - sum(eligibleContenders.map(c => c.seats()))
-    const fullSeating = range(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
+export function runElection(election: Election): Results {
+    const eligibleContenders = giveInitialSeats(election)
+    const { seats } = election
+    const initialAssignedSeats = sumBy(eligibleContenders, c => c.seats())
+
+    const remainingSeats = seats - initialAssignedSeats
+    const fullSeating = giveRemainderSeats(eligibleContenders, remainingSeats)
+
     const results = {
         seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats])))
     }
@@ -138,7 +135,23 @@ export function runElection({ contenders, threshold, seats }: Election): Results
             `Internal error: total assigned seats ${totalAssignedSeats} does not equal total seats ${seats}`
         )
     }
+
     return results
+}
+
+function giveRemainderSeats(eligibleContenders: EligibleContender[], remainingSeats: number): EligibleContender[] {
+    return range(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
+}
+
+function giveInitialSeats({ contenders, threshold, seats }: Election): EligibleContender[] {
+    const totalVotes = sumBy(contenders, c => c.votes())
+    const effectiveThreshold = Math.floor(totalVotes * threshold)
+    const filteredContenders = contenders
+        .map(contender => contender.filterPartiesByEffectiveThreshold(effectiveThreshold))
+        .filter(c => c !== null)
+    const eligibleVotes = sumBy(filteredContenders, c => c.votes())
+    const quota = Math.floor(eligibleVotes / seats)
+    return filteredContenders.map(c => c.toEligibleContender(quota))
 }
 
 function giveNextSeat(contenders: EligibleContender[]): EligibleContender[] {

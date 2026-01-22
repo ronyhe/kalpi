@@ -1,3 +1,7 @@
+export function sumBy<T>(arr: T[], fn: (item: T) => number): number {
+    return sum(arr.map(fn))
+}
+
 export function sum(nums: number[]): number {
     return nums.reduce((a, b) => a + b, 0)
 }
