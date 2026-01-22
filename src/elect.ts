@@ -145,12 +145,12 @@ function giveRemainderSeats(eligibleContenders: EligibleContender[], remainingSe
 
 function giveInitialSeats({ contenders, threshold, seats }: Election): EligibleContender[] {
     const totalVotes = sumBy(contenders, c => c.votes())
-    const effectiveThreshold = Math.floor(totalVotes * threshold)
+    const effectiveThreshold = totalVotes * threshold
     const filteredContenders = contenders
         .map(contender => contender.filterPartiesByEffectiveThreshold(effectiveThreshold))
         .filter(c => c !== null)
     const eligibleVotes = sumBy(filteredContenders, c => c.votes())
-    const quota = Math.floor(eligibleVotes / seats)
+    const quota = eligibleVotes / seats
     return filteredContenders.map(c => c.toEligibleContender(quota))
 }
 
