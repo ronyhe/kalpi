@@ -3,6 +3,5 @@
     "categories": {
         "correctness": "deny",
         "suspicious": "deny"
-    },
-    "rules": {}
+    }
 }
