@@ -1,7 +1,7 @@
 import { maxBy, sum, iterations, sumBy } from './utils.ts'
 
 export interface SerializedElection {
-    votes: (Party | Alliance)[]
+    votes: (Party | SurplusAgreement)[]
     seats: number
     threshold: number
 }
@@ -11,7 +11,7 @@ export interface Party {
     votes: number
 }
 
-export type Alliance = Party[]
+export type SurplusAgreement = Party[]
 
 export interface Election {
     contenders: Contender[]
@@ -40,7 +40,7 @@ export function deserializeElection({ votes, threshold, seats }: SerializedElect
     }
 }
 
-function isParty(v: Party | Alliance): v is Party {
+function isParty(v: Party | SurplusAgreement): v is Party {
     return (v as Party).name !== undefined
 }
 
@@ -63,13 +63,13 @@ class Contender {
         return new Contender(passedParties)
     }
 
-    toEligibleContender(quota: number): EligibleContender {
-        const eligibleParties = this.parties.map(p => new EligibleParty(p.name, p.votes, Math.floor(p.votes / quota)))
-        return new EligibleContender(eligibleParties)
+    toSeated(quota: number): SeatedContender {
+        const eligibleParties = this.parties.map(p => new Seated(p.name, p.votes, Math.floor(p.votes / quota)))
+        return new SeatedContender(eligibleParties)
     }
 }
 
-class EligibleParty {
+class Seated {
     public readonly name: string
     public readonly votes: number
     public readonly seats: number
@@ -85,10 +85,10 @@ class EligibleParty {
     }
 }
 
-class EligibleContender {
-    public readonly parties: EligibleParty[]
+class SeatedContender {
+    public readonly parties: Seated[]
 
-    constructor(parties: EligibleParty[]) {
+    constructor(parties: Seated[]) {
         this.parties = parties
     }
 
@@ -100,16 +100,16 @@ class EligibleContender {
         return sumBy(this.parties, p => p.seats)
     }
 
-    priceForNextSeat() {
+    bidForNextSeat() {
         return Math.floor(this.votes() / (this.seats() + 1))
     }
 
-    giveSeatToBestParty(): EligibleContender {
+    allocateSeatToHighestBidder(): SeatedContender {
         const bestParty = maxBy(this.parties, p => p.priceForNextSeat())!
-        return new EligibleContender(
+        return new SeatedContender(
             this.parties.map(p => {
                 if (Object.is(bestParty, p)) {
-                    return new EligibleParty(p.name, p.votes, p.seats + 1)
+                    return new Seated(p.name, p.votes, p.seats + 1)
                 } else {
                     return p
                 }
@@ -119,12 +119,12 @@ class EligibleContender {
 }
 
 export function runElection(election: Election): Results {
-    const eligibleContenders = giveInitialSeats(election)
+    const seatedContenders = allocateInitialSeats(election)
     const { seats } = election
-    const initialAssignedSeats = sumBy(eligibleContenders, c => c.seats())
+    const initialAssignedSeats = sumBy(seatedContenders, c => c.seats())
 
-    const remainingSeats = seats - initialAssignedSeats
-    const fullSeating = giveRemainderSeats(eligibleContenders, remainingSeats)
+    const remainderSeats = seats - initialAssignedSeats
+    const fullSeating = allocateRemainderSeats(seatedContenders, remainderSeats)
 
     const results = {
         seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats])))
@@ -139,26 +139,26 @@ export function runElection(election: Election): Results {
     return results
 }
 
-function giveRemainderSeats(eligibleContenders: EligibleContender[], remainingSeats: number): EligibleContender[] {
-    return iterations(remainingSeats).reduce((prev, _) => giveNextSeat(prev), eligibleContenders)
+function allocateRemainderSeats(seatedContenders: SeatedContender[], remainingSeats: number): SeatedContender[] {
+    return iterations(remainingSeats).reduce((prev, _) => allocateNextRemainderSeat(prev), seatedContenders)
 }
 
-function giveInitialSeats({ contenders, threshold, seats }: Election): EligibleContender[] {
+function allocateInitialSeats({ contenders, threshold, seats }: Election): SeatedContender[] {
     const totalVotes = sumBy(contenders, c => c.votes())
     const effectiveThreshold = totalVotes * threshold
     const filteredContenders = contenders
         .map(contender => contender.filterPartiesByEffectiveThreshold(effectiveThreshold))
         .filter(c => c !== null)
-    const eligibleVotes = sumBy(filteredContenders, c => c.votes())
-    const quota = eligibleVotes / seats
-    return filteredContenders.map(c => c.toEligibleContender(quota))
+    const qualifiedVotes = sumBy(filteredContenders, c => c.votes())
+    const quota = qualifiedVotes / seats
+    return filteredContenders.map(c => c.toSeated(quota))
 }
 
-function giveNextSeat(contenders: EligibleContender[]): EligibleContender[] {
-    const bestContender = maxBy(contenders, c => c.priceForNextSeat())!
+function allocateNextRemainderSeat(contenders: SeatedContender[]): SeatedContender[] {
+    const bestContender = maxBy(contenders, c => c.bidForNextSeat())!
     return contenders.map(c => {
         if (Object.is(c, bestContender)) {
-            return c.giveSeatToBestParty()
+            return c.allocateSeatToHighestBidder()
         } else {
             return c
         }
