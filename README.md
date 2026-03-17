@@ -1,4 +1,4 @@
-# Elect
+# Kalpi
 
 A didactical implementation of the **Bader-Ofer method** (חוק בדר-עופר) — the seat allocation algorithm used for the Israeli Parliament (Knesset).
 
