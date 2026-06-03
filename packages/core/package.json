@@ -10,6 +10,6 @@
         "typecheck": "tsc"
     },
     "devDependencies": {
-        "@kalpi/data": "0.0.1"
+        "@kalpi/data": "*"
     }
 }

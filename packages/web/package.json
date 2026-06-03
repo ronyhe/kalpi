@@ -6,7 +6,7 @@
         "typecheck": "tsc"
     },
     "dependencies": {
-        "@kalpi/core": "0.0.1",
-        "@kalpi/data": "0.0.1"
+        "@kalpi/core": "*",
+        "@kalpi/data": "*"
     }
 }
