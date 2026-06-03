@@ -1,0 +1,12 @@
+{
+    "name": "@kalpi/web",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@kalpi/core": "0.0.1",
+        "@kalpi/data": "0.0.1"
+    }
+}

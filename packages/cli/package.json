@@ -1,0 +1,12 @@
+{
+    "name": "@kalpi/cli",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "cli": "node src/index.ts",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@kalpi/core": "0.0.1"
+    }
+}

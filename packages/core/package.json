@@ -1,0 +1,15 @@
+{
+    "name": "@kalpi/core",
+    "version": "0.0.1",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "scripts": {
+        "test": "node --test",
+        "typecheck": "tsc"
+    },
+    "devDependencies": {
+        "@kalpi/data": "0.0.1"
+    }
+}

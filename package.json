@@ -1,20 +1,24 @@
 {
     "name": "kalpi",
-    "version": "1.0.0",
+    "version": "0.0.1",
+    "private": true,
     "description": "",
     "keywords": [],
     "license": "UNLICENSED",
     "author": "ronyhe",
+    "workspaces": [
+        "packages/*"
+    ],
     "type": "module",
     "scripts": {
-        "test": "node --test",
+        "test": "npm test --workspaces --if-present",
         "fmt": "oxfmt",
         "fmt:check": "oxfmt --check",
         "lint": "oxlint",
         "lint:fix": "oxlint --fix",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "npm run typecheck --workspaces --if-present",
         "verify": "npm run fmt:check && npm run lint && npm run typecheck  && npm test",
-        "cli": "node src/cli.ts"
+        "cli": "node packages/cli/src/index.ts"
     },
     "devDependencies": {
         "@types/node": "^25.0.3",

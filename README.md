@@ -31,7 +31,7 @@ Core decisions:
 
 ```bash
 npm install
-npm run cli -- test/knesset25.json
+npm run cli -- packages/data/knesset25.json
 ```
 
 The CLI accepts a JSON file describing an election (votes per party, seat count, threshold) and prints the resulting seat allocation.

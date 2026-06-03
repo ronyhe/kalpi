@@ -1,20 +1,19 @@
+import { knesset24, knesset25 } from '@kalpi/data'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 
-import { deserializeElection, runElection, type SerializedElection } from '../src/kalpi.ts'
-import data24 from './knesset24.json' with { type: 'json' }
-import data25 from './knesset25.json' with { type: 'json' }
+import { deserializeElection, runElection, type SerializedElection } from '../src/index.ts'
 
 interface Fixture extends SerializedElection {
     expected: Record<string, number>
 }
 
 test('24th Knesset', () => {
-    testElection(data24)
+    testElection(knesset24)
 })
 
 test('25th Knesset', () => {
-    testElection(data25)
+    testElection(knesset25)
 })
 
 function testElection(fixture: Fixture) {
