@@ -38,8 +38,8 @@ The CLI accepts a JSON file describing an election (votes per party, seat count,
 
 ## Roadmap
 
-1. Split into core, data, CLI, and web packages.
-2. Preserve the current CLI behavior.
+1. [x] Split into core, data, CLI, and web packages.
+2. [x] Preserve the current CLI behavior.
 3. Extend results with structured explanation steps.
 4. Build the first web flow around real Knesset election data.
 5. Add scenario editing later.
