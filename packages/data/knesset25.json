@@ -1,68 +1,1106 @@
 {
     "votes": [
         [
-            { "name": "HaLikud", "votes": 1115336 },
-            { "name": "HaTzionut HaDatit", "votes": 516470 }
+            {
+                "name": "HaLikud",
+                "votes": 1115336
+            },
+            {
+                "name": "HaTzionut HaDatit",
+                "votes": 516470
+            }
         ],
         [
-            { "name": "Yesh Atid", "votes": 847435 },
-            { "name": "HaMahane HaMamlachti", "votes": 432482 }
+            {
+                "name": "Yesh Atid",
+                "votes": 847435
+            },
+            {
+                "name": "HaMahane HaMamlachti",
+                "votes": 432482
+            }
         ],
         [
-            { "name": "Shas", "votes": 392964 },
-            { "name": "Yahadut HaTorah", "votes": 280194 }
+            {
+                "name": "Shas",
+                "votes": 392964
+            },
+            {
+                "name": "Yahadut HaTorah",
+                "votes": 280194
+            }
         ],
         [
-            { "name": "HaAvoda", "votes": 175992 },
-            { "name": "Meretz", "votes": 150793 }
+            {
+                "name": "HaAvoda",
+                "votes": 175992
+            },
+            {
+                "name": "Meretz",
+                "votes": 150793
+            }
         ],
         [
-            { "name": "HaPiratim", "votes": 1728 },
-            { "name": "Yesh Kivun", "votes": 1215 }
+            {
+                "name": "HaPiratim",
+                "votes": 1728
+            },
+            {
+                "name": "Yesh Kivun",
+                "votes": 1215
+            }
         ],
-        { "name": "Yisrael Beytenu", "votes": 213687 },
-        { "name": "Ra'am", "votes": 194047 },
-        { "name": "Hadash-Ta'al", "votes": 178735 },
-        { "name": "Balad", "votes": 138617 },
-        { "name": "HaBayit HaYehudi", "votes": 56775 },
-        { "name": "Hofesh Kalkali", "votes": 15801 },
-        { "name": "BeOmetz Bishvilcha", "votes": 14694 },
-        { "name": "HaKalkalit HaHadasha", "votes": 13920 },
-        { "name": "Tzeirim Boarim", "votes": 8800 },
-        { "name": "Kol HaSviva VeHaHai", "votes": 1618 },
-        { "name": "Da'at Tov VaRa (Ale Yarok)", "votes": 1524 },
-        { "name": "Nativ", "votes": 1354 },
-        { "name": "Kol Kol Kovea", "votes": 1292 },
-        { "name": "Yisrael Hofshit Demokratit", "votes": 1157 },
-        { "name": "Seder Hadash", "votes": 1078 },
-        { "name": "HaAtzmaim HaHadashim", "votes": 1020 },
-        { "name": "Manhigut Hevratit", "votes": 988 },
-        { "name": "Reshimat Shloshim Arba'im", "votes": 939 },
-        { "name": "Ani VeAta", "votes": 746 },
-        { "name": "Shahar Koach Hevrati", "votes": 430 },
-        { "name": "HaLev HaYehudi", "votes": 415 },
-        { "name": "HaGush HaTanachi", "votes": 411 },
-        { "name": "Kvod HaAdam", "votes": 350 },
-        { "name": "Anachnu", "votes": 334 },
-        { "name": "Tzomet", "votes": 292 },
-        { "name": "Tsav HaSha'a", "votes": 262 },
-        { "name": "Shma", "votes": 255 },
-        { "name": "Ichud Bnei HaBrit", "votes": 234 },
-        { "name": "Kama", "votes": 205 },
-        { "name": "Koach Lehashpia", "votes": 153 }
+        {
+            "name": "Yisrael Beytenu",
+            "votes": 213687
+        },
+        {
+            "name": "Ra'am",
+            "votes": 194047
+        },
+        {
+            "name": "Hadash-Ta'al",
+            "votes": 178735
+        },
+        {
+            "name": "Balad",
+            "votes": 138617
+        },
+        {
+            "name": "HaBayit HaYehudi",
+            "votes": 56775
+        },
+        {
+            "name": "Hofesh Kalkali",
+            "votes": 15801
+        },
+        {
+            "name": "BeOmetz Bishvilcha",
+            "votes": 14694
+        },
+        {
+            "name": "HaKalkalit HaHadasha",
+            "votes": 13920
+        },
+        {
+            "name": "Tzeirim Boarim",
+            "votes": 8800
+        },
+        {
+            "name": "Kol HaSviva VeHaHai",
+            "votes": 1618
+        },
+        {
+            "name": "Da'at Tov VaRa (Ale Yarok)",
+            "votes": 1524
+        },
+        {
+            "name": "Nativ",
+            "votes": 1354
+        },
+        {
+            "name": "Kol Kol Kovea",
+            "votes": 1292
+        },
+        {
+            "name": "Yisrael Hofshit Demokratit",
+            "votes": 1157
+        },
+        {
+            "name": "Seder Hadash",
+            "votes": 1078
+        },
+        {
+            "name": "HaAtzmaim HaHadashim",
+            "votes": 1020
+        },
+        {
+            "name": "Manhigut Hevratit",
+            "votes": 988
+        },
+        {
+            "name": "Reshimat Shloshim Arba'im",
+            "votes": 939
+        },
+        {
+            "name": "Ani VeAta",
+            "votes": 746
+        },
+        {
+            "name": "Shahar Koach Hevrati",
+            "votes": 430
+        },
+        {
+            "name": "HaLev HaYehudi",
+            "votes": 415
+        },
+        {
+            "name": "HaGush HaTanachi",
+            "votes": 411
+        },
+        {
+            "name": "Kvod HaAdam",
+            "votes": 350
+        },
+        {
+            "name": "Anachnu",
+            "votes": 334
+        },
+        {
+            "name": "Tzomet",
+            "votes": 292
+        },
+        {
+            "name": "Tsav HaSha'a",
+            "votes": 262
+        },
+        {
+            "name": "Shma",
+            "votes": 255
+        },
+        {
+            "name": "Ichud Bnei HaBrit",
+            "votes": 234
+        },
+        {
+            "name": "Kama",
+            "votes": 205
+        },
+        {
+            "name": "Koach Lehashpia",
+            "votes": 153
+        }
     ],
     "seats": 120,
     "threshold": 0.0325,
-    "expected": {
-        "HaLikud": 32,
-        "Yesh Atid": 24,
-        "HaTzionut HaDatit": 14,
-        "HaMahane HaMamlachti": 12,
-        "Shas": 11,
-        "Yahadut HaTorah": 7,
-        "Yisrael Beytenu": 6,
-        "Ra'am": 5,
-        "Hadash-Ta'al": 5,
-        "HaAvoda": 4
+    "results": {
+        "seats": {
+            "HaLikud": 32,
+            "Yesh Atid": 24,
+            "HaTzionut HaDatit": 14,
+            "HaMahane HaMamlachti": 12,
+            "Shas": 11,
+            "Yahadut HaTorah": 7,
+            "Yisrael Beytenu": 6,
+            "Ra'am": 5,
+            "Hadash-Ta'al": 5,
+            "HaAvoda": 4
+        },
+        "steps": [
+            {
+                "kind": "threshold",
+                "totalVotes": 4764742,
+                "thresholdRatio": 0.0325,
+                "thresholdVotes": 154854.11500000002,
+                "parties": [
+                    {
+                        "name": "HaLikud",
+                        "votes": 1115336,
+                        "passed": true
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "votes": 516470,
+                        "passed": true
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "votes": 847435,
+                        "passed": true
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "votes": 432482,
+                        "passed": true
+                    },
+                    {
+                        "name": "Shas",
+                        "votes": 392964,
+                        "passed": true
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "votes": 280194,
+                        "passed": true
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "votes": 175992,
+                        "passed": true
+                    },
+                    {
+                        "name": "Meretz",
+                        "votes": 150793,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaPiratim",
+                        "votes": 1728,
+                        "passed": false
+                    },
+                    {
+                        "name": "Yesh Kivun",
+                        "votes": 1215,
+                        "passed": false
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "votes": 213687,
+                        "passed": true
+                    },
+                    {
+                        "name": "Ra'am",
+                        "votes": 194047,
+                        "passed": true
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "votes": 178735,
+                        "passed": true
+                    },
+                    {
+                        "name": "Balad",
+                        "votes": 138617,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaBayit HaYehudi",
+                        "votes": 56775,
+                        "passed": false
+                    },
+                    {
+                        "name": "Hofesh Kalkali",
+                        "votes": 15801,
+                        "passed": false
+                    },
+                    {
+                        "name": "BeOmetz Bishvilcha",
+                        "votes": 14694,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaKalkalit HaHadasha",
+                        "votes": 13920,
+                        "passed": false
+                    },
+                    {
+                        "name": "Tzeirim Boarim",
+                        "votes": 8800,
+                        "passed": false
+                    },
+                    {
+                        "name": "Kol HaSviva VeHaHai",
+                        "votes": 1618,
+                        "passed": false
+                    },
+                    {
+                        "name": "Da'at Tov VaRa (Ale Yarok)",
+                        "votes": 1524,
+                        "passed": false
+                    },
+                    {
+                        "name": "Nativ",
+                        "votes": 1354,
+                        "passed": false
+                    },
+                    {
+                        "name": "Kol Kol Kovea",
+                        "votes": 1292,
+                        "passed": false
+                    },
+                    {
+                        "name": "Yisrael Hofshit Demokratit",
+                        "votes": 1157,
+                        "passed": false
+                    },
+                    {
+                        "name": "Seder Hadash",
+                        "votes": 1078,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaAtzmaim HaHadashim",
+                        "votes": 1020,
+                        "passed": false
+                    },
+                    {
+                        "name": "Manhigut Hevratit",
+                        "votes": 988,
+                        "passed": false
+                    },
+                    {
+                        "name": "Reshimat Shloshim Arba'im",
+                        "votes": 939,
+                        "passed": false
+                    },
+                    {
+                        "name": "Ani VeAta",
+                        "votes": 746,
+                        "passed": false
+                    },
+                    {
+                        "name": "Shahar Koach Hevrati",
+                        "votes": 430,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaLev HaYehudi",
+                        "votes": 415,
+                        "passed": false
+                    },
+                    {
+                        "name": "HaGush HaTanachi",
+                        "votes": 411,
+                        "passed": false
+                    },
+                    {
+                        "name": "Kvod HaAdam",
+                        "votes": 350,
+                        "passed": false
+                    },
+                    {
+                        "name": "Anachnu",
+                        "votes": 334,
+                        "passed": false
+                    },
+                    {
+                        "name": "Tzomet",
+                        "votes": 292,
+                        "passed": false
+                    },
+                    {
+                        "name": "Tsav HaSha'a",
+                        "votes": 262,
+                        "passed": false
+                    },
+                    {
+                        "name": "Shma",
+                        "votes": 255,
+                        "passed": false
+                    },
+                    {
+                        "name": "Ichud Bnei HaBrit",
+                        "votes": 234,
+                        "passed": false
+                    },
+                    {
+                        "name": "Kama",
+                        "votes": 205,
+                        "passed": false
+                    },
+                    {
+                        "name": "Koach Lehashpia",
+                        "votes": 153,
+                        "passed": false
+                    }
+                ]
+            },
+            {
+                "kind": "quota",
+                "qualifiedVotes": 4347342,
+                "totalSeats": 120,
+                "quota": 36227.85
+            },
+            {
+                "kind": "initial-allocation",
+                "quota": 36227.85,
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "votes": 1115336,
+                        "seats": 30
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "votes": 516470,
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "votes": 847435,
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "votes": 432482,
+                        "seats": 11
+                    },
+                    {
+                        "name": "Shas",
+                        "votes": 392964,
+                        "seats": 10
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "votes": 280194,
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "votes": 175992,
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "votes": 213687,
+                        "seats": 5
+                    },
+                    {
+                        "name": "Ra'am",
+                        "votes": 194047,
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "votes": 178735,
+                        "seats": 4
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 1,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 44,
+                        "bid": 36262
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 34,
+                        "bid": 36569
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 17,
+                        "bid": 37397
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 5,
+                        "bid": 35614
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 4,
+                        "bid": 35747
+                    }
+                ],
+                "winningContender": ["Shas", "Yahadut HaTorah"],
+                "winningParty": "Shas",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 30
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 4
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 2,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 44,
+                        "bid": 36262
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 34,
+                        "bid": 36569
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 5,
+                        "bid": 35614
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 4,
+                        "bid": 35747
+                    }
+                ],
+                "winningContender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                "winningParty": "HaMahane HaMamlachti",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 30
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 4
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 3,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 44,
+                        "bid": 36262
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 35,
+                        "bid": 35553
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 5,
+                        "bid": 35614
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 4,
+                        "bid": 35747
+                    }
+                ],
+                "winningContender": ["HaLikud", "HaTzionut HaDatit"],
+                "winningParty": "HaLikud",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 31
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 4
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 4,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 45,
+                        "bid": 35474
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 35,
+                        "bid": 35553
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 5,
+                        "bid": 35614
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 4,
+                        "bid": 35747
+                    }
+                ],
+                "winningContender": ["Hadash-Ta'al"],
+                "winningParty": "Hadash-Ta'al",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 31
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 5
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 5,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 45,
+                        "bid": 35474
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 35,
+                        "bid": 35553
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 5,
+                        "bid": 35614
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 5,
+                        "bid": 29789
+                    }
+                ],
+                "winningContender": ["Yisrael Beytenu"],
+                "winningParty": "Yisrael Beytenu",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 31
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 23
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 6
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 5
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 6,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 45,
+                        "bid": 35474
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 35,
+                        "bid": 35553
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 6,
+                        "bid": 30526
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 5,
+                        "bid": 29789
+                    }
+                ],
+                "winningContender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                "winningParty": "Yesh Atid",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 31
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 24
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 6
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 5
+                    }
+                ]
+            },
+            {
+                "kind": "remainder-seat",
+                "round": 7,
+                "bids": [
+                    {
+                        "contender": ["HaLikud", "HaTzionut HaDatit"],
+                        "votes": 1631806,
+                        "currentSeats": 45,
+                        "bid": 35474
+                    },
+                    {
+                        "contender": ["Yesh Atid", "HaMahane HaMamlachti"],
+                        "votes": 1279917,
+                        "currentSeats": 36,
+                        "bid": 34592
+                    },
+                    {
+                        "contender": ["Shas", "Yahadut HaTorah"],
+                        "votes": 673158,
+                        "currentSeats": 18,
+                        "bid": 35429
+                    },
+                    {
+                        "contender": ["HaAvoda"],
+                        "votes": 175992,
+                        "currentSeats": 4,
+                        "bid": 35198
+                    },
+                    {
+                        "contender": ["Yisrael Beytenu"],
+                        "votes": 213687,
+                        "currentSeats": 6,
+                        "bid": 30526
+                    },
+                    {
+                        "contender": ["Ra'am"],
+                        "votes": 194047,
+                        "currentSeats": 5,
+                        "bid": 32341
+                    },
+                    {
+                        "contender": ["Hadash-Ta'al"],
+                        "votes": 178735,
+                        "currentSeats": 5,
+                        "bid": 29789
+                    }
+                ],
+                "winningContender": ["HaLikud", "HaTzionut HaDatit"],
+                "winningParty": "HaLikud",
+                "allocations": [
+                    {
+                        "name": "HaLikud",
+                        "seats": 32
+                    },
+                    {
+                        "name": "HaTzionut HaDatit",
+                        "seats": 14
+                    },
+                    {
+                        "name": "Yesh Atid",
+                        "seats": 24
+                    },
+                    {
+                        "name": "HaMahane HaMamlachti",
+                        "seats": 12
+                    },
+                    {
+                        "name": "Shas",
+                        "seats": 11
+                    },
+                    {
+                        "name": "Yahadut HaTorah",
+                        "seats": 7
+                    },
+                    {
+                        "name": "HaAvoda",
+                        "seats": 4
+                    },
+                    {
+                        "name": "Yisrael Beytenu",
+                        "seats": 6
+                    },
+                    {
+                        "name": "Ra'am",
+                        "seats": 5
+                    },
+                    {
+                        "name": "Hadash-Ta'al",
+                        "seats": 5
+                    }
+                ]
+            }
+        ]
     }
 }

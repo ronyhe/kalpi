@@ -23,6 +23,73 @@ export interface Results {
     seats: {
         [party: string]: number
     }
+    steps: Step[]
+}
+
+export type Step = ThresholdStep | QuotaStep | InitialAllocationStep | RemainderSeatStep
+
+export interface ThresholdStep {
+    kind: 'threshold'
+    /** Total valid votes before applying the electoral threshold. */
+    totalVotes: number
+    /** Electoral threshold as a fraction of total valid votes, for example 0.0325 for 3.25%. */
+    thresholdRatio: number
+    /** Minimum votes required for an individual party to remain eligible. */
+    thresholdVotes: number
+    /** Every party from the input, annotated with whether that party passed the threshold. */
+    parties: {
+        name: string
+        votes: number
+        passed: boolean
+    }[]
+}
+
+export interface QuotaStep {
+    kind: 'quota'
+    /** Sum of votes for parties that passed the electoral threshold. */
+    qualifiedVotes: number
+    /** Number of seats being allocated in this election. */
+    totalSeats: number
+    /** Qualified votes divided by total seats. */
+    quota: number
+}
+
+export interface InitialAllocationStep {
+    kind: 'initial-allocation'
+    /** Quota used to calculate each party's initial seat count. */
+    quota: number
+    /** Initial seats assigned to each threshold-qualified party before remainder seats are allocated. */
+    allocations: {
+        name: string
+        votes: number
+        seats: number
+    }[]
+}
+
+export interface RemainderSeatStep {
+    kind: 'remainder-seat'
+    /** One-based remainder-seat allocation round. */
+    round: number
+    /** Bids for the next seat, one per contender. A contender may be a single party or a surplus agreement. */
+    bids: {
+        /** Party names participating in this bid. Multiple names represent a surplus agreement. */
+        contender: string[]
+        /** Combined votes for the contender. */
+        votes: number
+        /** Combined seats held by the contender before this round's seat is assigned. */
+        currentSeats: number
+        /** Bader-Ofer bid for the next seat: floor(votes / (currentSeats + 1)). */
+        bid: number
+    }[]
+    /** Party names in the contender that won this round's bid. */
+    winningContender: string[]
+    /** Party that received the seat from the winning contender. */
+    winningParty: string
+    /** Seat totals after this remainder seat has been assigned. */
+    allocations: {
+        name: string
+        seats: number
+    }[]
 }
 
 export function deserializeElection({ votes, threshold, seats }: SerializedElection): Election {
@@ -127,7 +194,8 @@ export function runElection(election: Election): Results {
     const fullSeating = allocateRemainderSeats(seatedContenders, remainderSeats)
 
     const results = {
-        seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats])))
+        seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats]))),
+        steps: []
     }
     const totalAssignedSeats = sum(Object.values(results.seats))
     if (totalAssignedSeats !== seats) {
