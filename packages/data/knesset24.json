@@ -183,1162 +183,621 @@
             "Meretz": 6,
             "Ra'am": 4
         },
-        "steps": [
-            {
-                "kind": "threshold",
-                "totalVotes": 4410052,
-                "thresholdRatio": 0.0325,
+        "breakdown": {
+            "totalVotes": 4410052,
+            "threshold": {
+                "ratio": 0.0325,
                 "thresholdVotes": 143326.69,
-                "parties": [
-                    {
-                        "name": "HaLikud",
-                        "votes": 1066892,
-                        "passed": true
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "votes": 225641,
-                        "passed": true
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "votes": 614112,
-                        "passed": true
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "votes": 248370,
-                        "passed": true
-                    },
-                    {
-                        "name": "Shas",
-                        "votes": 316008,
-                        "passed": true
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "votes": 248391,
-                        "passed": true
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "votes": 292257,
-                        "passed": true
-                    },
-                    {
-                        "name": "HaKalkalit HaHadasha",
-                        "votes": 34883,
-                        "passed": false
-                    },
-                    {
-                        "name": "Yamina",
-                        "votes": 273836,
-                        "passed": true
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "votes": 209161,
-                        "passed": true
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "votes": 268767,
-                        "passed": true
-                    },
-                    {
-                        "name": "Meretz",
-                        "votes": 202218,
-                        "passed": true
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "votes": 212583,
-                        "passed": true
-                    },
-                    {
-                        "name": "Ra'am",
-                        "votes": 167064,
-                        "passed": true
-                    },
-                    {
-                        "name": "Rapeh",
-                        "votes": 17346,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaPiratim",
-                        "votes": 1309,
-                        "passed": false
-                    },
-                    {
-                        "name": "Ani VeAta",
-                        "votes": 1291,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaTikva LeShinui",
-                        "votes": 1189,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaMapatz HaHevrati - Gimlaim",
-                        "votes": 811,
-                        "passed": false
-                    },
-                    {
-                        "name": "Mishpat Tzedek",
-                        "votes": 729,
-                        "passed": false
-                    },
-                    {
-                        "name": "Tzomet",
-                        "votes": 663,
-                        "passed": false
-                    },
-                    {
-                        "name": "Am Shalem",
-                        "votes": 592,
-                        "passed": false
-                    },
-                    {
-                        "name": "Seder Hadash",
-                        "votes": 514,
-                        "passed": false
-                    },
-                    {
-                        "name": "Kama",
-                        "votes": 486,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaBilti Efshari Efshari",
-                        "votes": 463,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaLev HaYehudi",
-                        "votes": 443,
-                        "passed": false
-                    },
-                    {
-                        "name": "Atzmenu",
-                        "votes": 441,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaGush HaTanachi",
-                        "votes": 429,
-                        "passed": false
-                    },
-                    {
-                        "name": "Olam Hadash",
-                        "votes": 429,
-                        "passed": false
-                    },
-                    {
-                        "name": "Brit HaShutfut",
-                        "votes": 408,
-                        "passed": false
-                    },
-                    {
-                        "name": "HaYisraelim",
-                        "votes": 395,
-                        "passed": false
-                    },
-                    {
-                        "name": "Shma",
-                        "votes": 395,
-                        "passed": false
-                    },
-                    {
-                        "name": "Da'am",
-                        "votes": 385,
-                        "passed": false
-                    },
-                    {
-                        "name": "Manhigut Hevratit",
-                        "votes": 256,
-                        "passed": false
-                    },
-                    {
-                        "name": "Ma'an",
-                        "votes": 253,
-                        "passed": false
-                    },
-                    {
-                        "name": "Hetz",
-                        "votes": 226,
-                        "passed": false
-                    },
-                    {
-                        "name": "Anachnu",
-                        "votes": 220,
-                        "passed": false
-                    },
-                    {
-                        "name": "Kvod HaAdam",
-                        "votes": 196,
-                        "passed": false
-                    }
+                "eliminatedParties": [
+                    "HaKalkalit HaHadasha",
+                    "Rapeh",
+                    "HaPiratim",
+                    "Ani VeAta",
+                    "HaTikva LeShinui",
+                    "HaMapatz HaHevrati - Gimlaim",
+                    "Mishpat Tzedek",
+                    "Tzomet",
+                    "Am Shalem",
+                    "Seder Hadash",
+                    "Kama",
+                    "HaBilti Efshari Efshari",
+                    "HaLev HaYehudi",
+                    "Atzmenu",
+                    "HaGush HaTanachi",
+                    "Olam Hadash",
+                    "Brit HaShutfut",
+                    "HaYisraelim",
+                    "Shma",
+                    "Da'am",
+                    "Manhigut Hevratit",
+                    "Ma'an",
+                    "Hetz",
+                    "Anachnu",
+                    "Kvod HaAdam"
                 ]
             },
-            {
-                "kind": "quota",
+            "quota": {
                 "qualifiedVotes": 4345300,
                 "totalSeats": 120,
-                "quota": 36210.833333333336
+                "value": 36210.833333333336
             },
-            {
-                "kind": "initial-allocation",
-                "quota": 36210.833333333336,
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "votes": 1066892,
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "votes": 225641,
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "votes": 614112,
-                        "seats": 16
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "votes": 248370,
-                        "seats": 6
-                    },
-                    {
-                        "name": "Shas",
-                        "votes": 316008,
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "votes": 248391,
-                        "seats": 6
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "votes": 292257,
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "votes": 273836,
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "votes": 209161,
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "votes": 268767,
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "votes": 202218,
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "votes": 212583,
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "votes": 167064,
-                        "seats": 4
-                    }
-                ]
+            "initialAllocation": {
+                "HaLikud": 29,
+                "HaTzionut HaDatit": 6,
+                "Yesh Atid": 16,
+                "Yisrael Beytenu": 6,
+                "Shas": 8,
+                "Yahadut HaTorah": 6,
+                "Kachol Lavan": 8,
+                "Yamina": 7,
+                "Tikva Hadasha": 5,
+                "HaAvoda": 7,
+                "Meretz": 5,
+                "HaReshima HaMeshutefet": 5,
+                "Ra'am": 4
             },
-            {
-                "kind": "remainder-seat",
-                "round": 1,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 22,
-                        "bid": 37499
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 14,
-                        "bid": 37626
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 12,
-                        "bid": 37153
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 12,
-                        "bid": 36229
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["Shas", "Yahadut HaTorah"],
-                "winningParty": "Yahadut HaTorah",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 16
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 2,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 22,
-                        "bid": 37499
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 12,
-                        "bid": 37153
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 12,
-                        "bid": 36229
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["Yesh Atid", "Yisrael Beytenu"],
-                "winningParty": "Yesh Atid",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 3,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 23,
-                        "bid": 35936
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 12,
-                        "bid": 37153
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 12,
-                        "bid": 36229
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["Yamina", "Tikva Hadasha"],
-                "winningParty": "Tikva Hadasha",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 5
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 4,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 23,
-                        "bid": 35936
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 13,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 12,
-                        "bid": 36229
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["HaAvoda", "Meretz"],
-                "winningParty": "Meretz",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 5,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 23,
-                        "bid": 35936
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 13,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 13,
-                        "bid": 33641
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["Yesh Atid", "Yisrael Beytenu"],
-                "winningParty": "Yisrael Beytenu",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 29
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 6,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 35,
-                        "bid": 35903
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 24,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 13,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 13,
-                        "bid": 33641
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["HaLikud", "HaTzionut HaDatit"],
-                "winningParty": "HaLikud",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 30
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 5
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 7,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 36,
-                        "bid": 34933
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 24,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 13,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 13,
-                        "bid": 33641
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 5,
-                        "bid": 35430
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["HaReshima HaMeshutefet"],
-                "winningParty": "HaReshima HaMeshutefet",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 30
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            },
-            {
-                "kind": "remainder-seat",
-                "round": 8,
-                "bids": [
-                    {
-                        "contender": ["HaLikud", "HaTzionut HaDatit"],
-                        "votes": 1292533,
-                        "currentSeats": 36,
-                        "bid": 34933
-                    },
-                    {
-                        "contender": ["Yesh Atid", "Yisrael Beytenu"],
-                        "votes": 862482,
-                        "currentSeats": 24,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["Shas", "Yahadut HaTorah"],
-                        "votes": 564399,
-                        "currentSeats": 15,
-                        "bid": 35274
-                    },
-                    {
-                        "contender": ["Kachol Lavan"],
-                        "votes": 292257,
-                        "currentSeats": 8,
-                        "bid": 32473
-                    },
-                    {
-                        "contender": ["Yamina", "Tikva Hadasha"],
-                        "votes": 482997,
-                        "currentSeats": 13,
-                        "bid": 34499
-                    },
-                    {
-                        "contender": ["HaAvoda", "Meretz"],
-                        "votes": 470985,
-                        "currentSeats": 13,
-                        "bid": 33641
-                    },
-                    {
-                        "contender": ["HaReshima HaMeshutefet"],
-                        "votes": 212583,
-                        "currentSeats": 6,
-                        "bid": 30369
-                    },
-                    {
-                        "contender": ["Ra'am"],
-                        "votes": 167064,
-                        "currentSeats": 4,
-                        "bid": 33412
-                    }
-                ],
-                "winningContender": ["Shas", "Yahadut HaTorah"],
-                "winningParty": "Shas",
-                "allocations": [
-                    {
-                        "name": "HaLikud",
-                        "seats": 30
-                    },
-                    {
-                        "name": "HaTzionut HaDatit",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Yesh Atid",
-                        "seats": 17
-                    },
-                    {
-                        "name": "Yisrael Beytenu",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Shas",
-                        "seats": 9
-                    },
-                    {
-                        "name": "Yahadut HaTorah",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Kachol Lavan",
-                        "seats": 8
-                    },
-                    {
-                        "name": "Yamina",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Tikva Hadasha",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaAvoda",
-                        "seats": 7
-                    },
-                    {
-                        "name": "Meretz",
-                        "seats": 6
-                    },
-                    {
-                        "name": "HaReshima HaMeshutefet",
-                        "seats": 6
-                    },
-                    {
-                        "name": "Ra'am",
-                        "seats": 4
-                    }
-                ]
-            }
-        ]
+            "remainderSeats": [
+                {
+                    "round": 1,
+                    "winningContender": ["Shas", "Yahadut HaTorah"],
+                    "winningParty": "Yahadut HaTorah",
+                    "allocations": {
+                        "HaLikud": 29,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 16,
+                        "Yisrael Beytenu": 6,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 5,
+                        "HaAvoda": 7,
+                        "Meretz": 5,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 22,
+                            "bid": 37499
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 14,
+                            "bid": 37626
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 12,
+                            "bid": 37153
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 12,
+                            "bid": 36229
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 2,
+                    "winningContender": ["Yesh Atid", "Yisrael Beytenu"],
+                    "winningParty": "Yesh Atid",
+                    "allocations": {
+                        "HaLikud": 29,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 6,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 5,
+                        "HaAvoda": 7,
+                        "Meretz": 5,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 22,
+                            "bid": 37499
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 12,
+                            "bid": 37153
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 12,
+                            "bid": 36229
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 3,
+                    "winningContender": ["Yamina", "Tikva Hadasha"],
+                    "winningParty": "Tikva Hadasha",
+                    "allocations": {
+                        "HaLikud": 29,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 6,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 5,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 23,
+                            "bid": 35936
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 12,
+                            "bid": 37153
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 12,
+                            "bid": 36229
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 4,
+                    "winningContender": ["HaAvoda", "Meretz"],
+                    "winningParty": "Meretz",
+                    "allocations": {
+                        "HaLikud": 29,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 6,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 6,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 23,
+                            "bid": 35936
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 13,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 12,
+                            "bid": 36229
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 5,
+                    "winningContender": ["Yesh Atid", "Yisrael Beytenu"],
+                    "winningParty": "Yisrael Beytenu",
+                    "allocations": {
+                        "HaLikud": 29,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 7,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 6,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 23,
+                            "bid": 35936
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 13,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 13,
+                            "bid": 33641
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 6,
+                    "winningContender": ["HaLikud", "HaTzionut HaDatit"],
+                    "winningParty": "HaLikud",
+                    "allocations": {
+                        "HaLikud": 30,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 7,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 6,
+                        "HaReshima HaMeshutefet": 5,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 35,
+                            "bid": 35903
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 24,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 13,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 13,
+                            "bid": 33641
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 7,
+                    "winningContender": ["HaReshima HaMeshutefet"],
+                    "winningParty": "HaReshima HaMeshutefet",
+                    "allocations": {
+                        "HaLikud": 30,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 7,
+                        "Shas": 8,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 6,
+                        "HaReshima HaMeshutefet": 6,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 36,
+                            "bid": 34933
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 24,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 13,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 13,
+                            "bid": 33641
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 5,
+                            "bid": 35430
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                },
+                {
+                    "round": 8,
+                    "winningContender": ["Shas", "Yahadut HaTorah"],
+                    "winningParty": "Shas",
+                    "allocations": {
+                        "HaLikud": 30,
+                        "HaTzionut HaDatit": 6,
+                        "Yesh Atid": 17,
+                        "Yisrael Beytenu": 7,
+                        "Shas": 9,
+                        "Yahadut HaTorah": 7,
+                        "Kachol Lavan": 8,
+                        "Yamina": 7,
+                        "Tikva Hadasha": 6,
+                        "HaAvoda": 7,
+                        "Meretz": 6,
+                        "HaReshima HaMeshutefet": 6,
+                        "Ra'am": 4
+                    },
+                    "bids": [
+                        {
+                            "contender": ["HaLikud", "HaTzionut HaDatit"],
+                            "votes": 1292533,
+                            "currentSeats": 36,
+                            "bid": 34933
+                        },
+                        {
+                            "contender": ["Yesh Atid", "Yisrael Beytenu"],
+                            "votes": 862482,
+                            "currentSeats": 24,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["Shas", "Yahadut HaTorah"],
+                            "votes": 564399,
+                            "currentSeats": 15,
+                            "bid": 35274
+                        },
+                        {
+                            "contender": ["Kachol Lavan"],
+                            "votes": 292257,
+                            "currentSeats": 8,
+                            "bid": 32473
+                        },
+                        {
+                            "contender": ["Yamina", "Tikva Hadasha"],
+                            "votes": 482997,
+                            "currentSeats": 13,
+                            "bid": 34499
+                        },
+                        {
+                            "contender": ["HaAvoda", "Meretz"],
+                            "votes": 470985,
+                            "currentSeats": 13,
+                            "bid": 33641
+                        },
+                        {
+                            "contender": ["HaReshima HaMeshutefet"],
+                            "votes": 212583,
+                            "currentSeats": 6,
+                            "bid": 30369
+                        },
+                        {
+                            "contender": ["Ra'am"],
+                            "votes": 167064,
+                            "currentSeats": 4,
+                            "bid": 33412
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }

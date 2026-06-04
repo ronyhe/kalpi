@@ -2,12 +2,12 @@ import { knesset24, knesset25 } from '@kalpi/data'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 
-import { deserializeElection, runElection, type SerializedElection, type Step } from '../src/index.ts'
+import { deserializeElection, runElection, type Breakdown, type SerializedElection } from '../src/index.ts'
 
 interface Fixture extends SerializedElection {
     results: {
         seats: Record<string, number>
-        steps: Step[]
+        breakdown: Breakdown
     }
 }
 

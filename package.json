@@ -16,6 +16,7 @@
         "fmt:check": "oxfmt --check",
         "lint": "oxlint",
         "lint:fix": "oxlint --fix",
+        "fix": "npm run fmt && npm run lint:fix",
         "typecheck": "npm run typecheck --workspaces --if-present",
         "verify": "npm run fmt:check && npm run lint && npm run typecheck  && npm test",
         "cli": "node packages/cli/src/index.ts"

@@ -23,72 +23,39 @@ export interface Results {
     seats: {
         [party: string]: number
     }
-    steps: Step[]
+    breakdown: Breakdown
 }
 
-export type Step = ThresholdStep | QuotaStep | InitialAllocationStep | RemainderSeatStep
-
-export interface ThresholdStep {
-    kind: 'threshold'
-    /** Total valid votes before applying the electoral threshold. */
+export interface Breakdown {
     totalVotes: number
-    /** Electoral threshold as a fraction of total valid votes, for example 0.0325 for 3.25%. */
-    thresholdRatio: number
-    /** Minimum votes required for an individual party to remain eligible. */
+    threshold: ThresholdBreakdown
+    quota: QuotaBreakdown
+    initialAllocation: Record<string, number>
+    remainderSeats: RemainderSeatBreakdown[]
+}
+
+export interface ThresholdBreakdown {
+    ratio: number
     thresholdVotes: number
-    /** Every party from the input, annotated with whether that party passed the threshold. */
-    parties: {
-        name: string
-        votes: number
-        passed: boolean
-    }[]
+    eliminatedParties: string[]
 }
 
-export interface QuotaStep {
-    kind: 'quota'
-    /** Sum of votes for parties that passed the electoral threshold. */
+export interface QuotaBreakdown {
     qualifiedVotes: number
-    /** Number of seats being allocated in this election. */
     totalSeats: number
-    /** Qualified votes divided by total seats. */
-    quota: number
+    value: number
 }
 
-export interface InitialAllocationStep {
-    kind: 'initial-allocation'
-    /** Quota used to calculate each party's initial seat count. */
-    quota: number
-    /** Initial seats assigned to each threshold-qualified party before remainder seats are allocated. */
-    allocations: {
-        name: string
-        votes: number
-        seats: number
-    }[]
-}
-
-export interface RemainderSeatStep {
-    kind: 'remainder-seat'
-    /** One-based remainder-seat allocation round. */
+export interface RemainderSeatBreakdown {
     round: number
-    /** Bids for the next seat, one per contender. A contender may be a single party or a surplus agreement. */
-    bids: {
-        /** Party names participating in this bid. Multiple names represent a surplus agreement. */
-        contender: string[]
-        /** Combined votes for the contender. */
-        votes: number
-        /** Combined seats held by the contender before this round's seat is assigned. */
-        currentSeats: number
-        /** Bader-Ofer bid for the next seat: floor(votes / (currentSeats + 1)). */
-        bid: number
-    }[]
-    /** Party names in the contender that won this round's bid. */
     winningContender: string[]
-    /** Party that received the seat from the winning contender. */
     winningParty: string
-    /** Seat totals after this remainder seat has been assigned. */
-    allocations: {
-        name: string
-        seats: number
+    allocations: Record<string, number>
+    bids: {
+        contender: string[]
+        votes: number
+        currentSeats: number
+        bid: number
     }[]
 }
 
@@ -195,7 +162,21 @@ export function runElection(election: Election): Results {
 
     const results = {
         seats: Object.fromEntries(fullSeating.flatMap(c => c.parties.map(p => [p.name, p.seats]))),
-        steps: []
+        breakdown: {
+            totalVotes: 0,
+            threshold: {
+                ratio: 0,
+                thresholdVotes: 0,
+                eliminatedParties: []
+            },
+            quota: {
+                qualifiedVotes: 0,
+                totalSeats: seats,
+                value: 0
+            },
+            initialAllocation: {},
+            remainderSeats: []
+        }
     }
     const totalAssignedSeats = sum(Object.values(results.seats))
     if (totalAssignedSeats !== seats) {
